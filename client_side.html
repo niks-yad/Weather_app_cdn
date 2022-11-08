@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  /* background courtesy = https://codepen.io/mohaiman/pen/MQqMyo */
+  html {
+    background-color: rgb(232, 232, 232);
+  }
+
+  .input_div {
+    width: 40%;
+    margin: auto;
+    position: relative;
+
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    box-sizing: border-box;
+
+  }
+
+  button {
+    background-color: rgba(0, 0, 0, 0.27);
+
+    border: none;
+    width: 20%;
+    color: rgb(255, 255, 255);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    margin: 8px;
+    cursor: pointer;
+    margin-left: 40%;
+    margin-top: 40px;
+  }
+
+  button:hover {
+    background-color: rgb(0, 0, 0, 0.57)
+  }
+
+  table {
+    /* width:40%; */
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    background: rgba(185, 185, 185, 0.24);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    height: 300px;
+    width: 800px;
+
+    /* position: relative; */
+  }
+
+  td,
+  th {
+    /* border: 1px solid rgb(209, 209, 209); */
+    /* border-radius: 10px; */
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 100;
+    width: 133px;
+    height: 55px;
+  }
+
+  div.widgets {
+    width: 20%;
+    margin: 50px;
+    height: 200px;
+    text-align: center;
+    background: rgba(185, 185, 185, 0.24);
+    backdrop-filter: blur(13px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 10px;
+  }
+
+  div.wid_encloser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body {
+    font-family: helvetica;
+    color: #fff
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+
+
+  .context {
+    width: 100%;
+    position: absolute;
+    top: 50vh;
+
+  }
+
+  .context h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+  }
+
+
+  .area {
+    background: #0096d1;
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+    width: 100%;
+    height: 100vh;
+
+
+  }
+
+  .circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(44, 44, 44, 0.366);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+
+  }
+
+  .circles li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+  }
+
+
+  .circles li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+  }
+
+  .circles li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+  }
+
+  .circles li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+  }
+
+  .circles li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+  }
+
+  .circles li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+  }
+
+  .circles li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+  }
+
+  .circles li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+  }
+
+  .circles li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+  }
+
+  .circles li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+  }
+
+
+
+  @keyframes animate {
+
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
+    }
+
+    100% {
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
+    }
+
+  }
+</style>
+
+<body>
+  <div id="app">
+    <div v-if="good_request">
+      <div class="area">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <h1 style="text-align: center ; padding-top: 10px;padding-bottom: 20px;">Weather App</h1>
+        <div class="input_div">
+          <input style="margin: auto;" type="general" id="city" v-on:keyup.enter="getWeatherData()"
+            placeholder="Enter City (eg. Dublin, IE)" required><br>
+          <button type="submit" v-on:click="getWeatherData()">
+            Search
+          </button>
+        </div>
+        <div class="table_div">
+          <table>
+            <tr>
+              <th style="  font-weight: 900;">Days</th>
+              <th style="  font-weight: 900;">Today</th>
+              <th style="  font-weight: 900;">Day 2</th>
+              <th style="  font-weight: 900;">Day 3</th>
+              <th style="  font-weight: 900;">Day 4</th>
+              <th style="  font-weight: 900;">Day 5</th>
+            </tr>
+            <tr>
+              <th style="  font-weight: 900;">Temp</th>
+              <th v-for="object in four_day_temp">
+                <div>
+                  {{object}}°C
+
+                </div>
+                <div v-if="object<12">
+                  <br>
+                  (Cold 🥶)
+                </div>
+                <div v-if="12<object & object<24">
+                  <br>
+                  (Mild 😊)
+                </div>
+                <div v-if="object>24">
+                  <br>
+                  (Hot 🥵)
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th style="  font-weight: 900;">Wind Speed</th>
+              <th v-for="object in four_day_wind">
+                <div>
+                  {{object}} kM/h
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th style="  font-weight: 900;">Weather Conditions</th>
+              <th v-for="object in four_day_rain">
+                <div>
+                  {{object}}
+                </div>
+
+              </th>
+            </tr>
+            <tr>
+              <th style="  font-weight: 900;">Sky</th>
+              <th v-for="object in four_day_forecast">
+                <div>
+                  <img :src="`https://openweathermap.org/img/wn/${sky_condn[0]}${sky_condn[1]}d.png`">
+
+
+                </div>
+              </th>
+            </tr>
+          </table>
+        </div>
+        <div class="wid_encloser">
+          <div class="widgets">
+            <br>
+            <h3>City</h3>
+            <br>
+            <p>{{name_of_city}}, {{name_of_country}}</p>
+            <br>
+            <p>Feels Like: {{feels_like}}°C</p>
+            <br>
+            <p>Sunrise: {{sunrise_time}} a.m.</p>
+            <br>
+            <p>sunset: {{sunrset_time}} p.m.</p>
+            <br>
+
+          </div>
+          <div class="widgets">
+            <br>
+            <h3>Weather Conditions</h3>
+            <br>
+            <p>{{weather_condn}}</p>
+            <br>
+            <img :src="`https://openweathermap.org/img/wn/${sky_condn[0]}${sky_condn[1]}d.png`">
+          </div>
+
+          <div class="widgets">
+            <br>
+            <h3>Rain Conditions</h3>
+            <br>
+            {{rain_condn}}
+            <br>
+            <br>
+            <p v-if="umbrella_packing">Carry an umbrella ☔</p>
+          </div>
+
+          <div class="widgets">
+            <br>
+            <h3>Pollution Levels</h3>
+            <br>
+            AQI: {{pollution_condn}}
+            <br>
+            <br>
+            <p v-if="pollution_condn == 1"> Good </p>
+            <p v-if="pollution_condn == 2"> Fair.</p>
+            <p v-if="pollution_condn == 3"> Moderate </p>
+            <p v-if="pollution_condn == 4"> Poor </p>
+            <p v-if="pollution_condn == 5"> Dangerous </p>
+            <br>
+            <p v-if="air_pol_indicator">Carry a mask 😷</p>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <div v-if="bad_request">
+      <div class="area">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <h1 style="text-align: center ; padding-top: 10px;padding-bottom: 20px;">Weather App</h1>
+        <div class="input_div">
+          <input style="margin: auto;" type="general" id="city" v-on:keyup.enter="getWeatherData()"
+            placeholder="Enter City (eg. Dublin)" required><br>
+          <button type="submit" v-on:click="getWeatherData()">
+            Search
+          </button>
+        </div>
+        <h1 style="text-align:center; ">city not found :(</h1>
+        <h2 style="text-align:center ;">Please try again</h2>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://unpkg.com/vue@3.0.5"></script>
+  <script type="module">
+    import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+    createApp({
+      data() {
+        return {
+          message: 'Hello Vue!',
+          name_of_city: '',
+          name_of_country: '',
+          feels_like: '',
+          sunrise_time: '',
+          sunrset_time: '',
+          four_day_forecast: [],
+          four_day_temp: [],
+          four_day_wind: [],
+          four_day_rain: [],
+          weather_condn: '',
+          sky_condn: '',
+          rain_condn: 'Rain not expected',
+          pollution_condn: '',
+          // four_day_rain_level: [],
+          umbrella_packing: false,
+          bad_request: false,
+          good_request: true,
+          air_pol_indicator: false,
+          // innovative:
+        }
+      },
+
+      methods: {
+
+        async getWeatherData(city) {
+          // emptying array for reusing
+          this.four_day_temp = [];
+          this.four_day_wind = [];
+          this.four_day_rain = [];
+          this.four_day_forecast = [];
+
+          // this.four_day_rain_level = [];
+          // turning indicators to true/false for reusing
+          this.umbrella_packing = false;
+          this.air_pol_indicator = false;
+          this.bad_request = false;
+          this.good_request = true;
+          this.rain_condn = 'Rain not expected';
+
+          var city = document.getElementById("city").value;
+          const api_url = 'http://localhost:7000/weather/' + city;
+          const response = await fetch(api_url)
+            .then((response) => response.json())
+
+            .catch((err) => {
+              console.log("Server didn't start up :(");
+              this.bad_request = true;
+              this.good_request = false;
+              console.log(err);
+            });
+
+          if (response.forecast_info.cod == 404) {
+            alert("Please enter a valid city");
+          }
+
+          // this.cities = response;
+          // console.log(this.four_day_forecast);
+          // console.log(response.forecast_info.list[3].main.temp);
+          for (let i = 0; i < 40; i = i + 8) {
+            this.four_day_temp.push(response.forecast_info.list[i].main.temp);
+            this.four_day_wind.push(response.forecast_info.list[i].wind.speed);
+            this.four_day_rain.push(response.forecast_info.list[i].weather[0].main);
+            this.four_day_forecast.push(response.forecast_info.list[i].weather[0].icon);
+
+            if (response.forecast_info.list[i].weather[0].main === 'Rain') {
+              this.umbrella_packing = true;
+              this.rain_condn = 'Rain expected'
+            }
+
+          }
+          if (response.pollution_info.list[0].components.pm2_5 > 10) {
+            this.air_pol_indicator = true;
+          }
+          console.log(this.four_day_forecast)
+          this.weather_condn = response.forecast_info.list[0].weather[0].description;
+          this.pollution_condn = response.pollution_info.list[0].main.aqi;
+          this.sky_condn = response.forecast_info.list[0].weather[0].icon;
+          this.name_of_city = response.forecast_info.city.name;
+          this.name_of_country = response.forecast_info.city.country;
+          this.feels_like = response.weather_info.main.feels_like;
+
+          var date1 = new Date(response.forecast_info.city.sunrise * 1000)
+          var hours1 = date1.getHours();
+          var minutes1 = "0" + date1.getMinutes();
+          this.sunrise_time = hours1 + ':' + minutes1.substr(-2);
+
+          var date2 = new Date(response.forecast_info.city.sunset * 1000)
+          var hours2 = date2.getHours();
+          var minutes2 = "0" + date2.getMinutes();
+          this.sunrset_time = hours2 + ':' + minutes2.substr(-2);
+        }
+      },
+    }).mount('#app')
+  </script>
+</body>
+
+</html>

@@ -2,7 +2,7 @@
 # CDN Weather App
 
 ## Description
-CDN Weather App is a weather forecasting application developed by Nikhil Yadav. The application provides real-time weather updates, forecasts, air pollution levels, and other weather-related data for specified cities. This project is organized into server-side logic, client-side interactions, and dependency management to provide a comprehensive weather data experience.
+The application provides real-time weather updates, forecasts, air pollution levels, and other weather-related data for specified cities. This project is organized into server-side logic, client-side interactions, and dependency management to provide a comprehensive weather data experience.
 
 ## Features
 - Fetch and display weather conditions for any city.
